@@ -71,7 +71,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
             roundScore = 0;
             scores[activePlayer] = roundScore;
             roundScoreDOM.textContent = scores[activePlayer];
-            currentScoreDOM.textContent = 0;
+            currentScoreDOM.textContent = '0';
             switchPlayer();
             break;
         default:
