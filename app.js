@@ -57,7 +57,9 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
     var dice = Math.ceil(Math.random() * 6);
 
     //02. Display result
-    document.querySelector('#current-' + activePlayer).textContent = dice;
+    var currentScoreDOM = document.querySelector('#current-' + activePlayer);
+    currentScoreDOM.textContent = dice;
+
     var diceDOMPic = document.querySelector('.dice');
     diceDOMPic.style.display = 'block';
     diceDOMPic.src = 'dice-' + dice + '.png';
@@ -70,6 +72,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
             scores[activePlayer] = roundScore;
             roundScoreDOM.textContent = scores[activePlayer];
             switchPlayer();
+            currentScoreDOM.textContent = 0;
             break;
         default:
             scores[activePlayer] += dice;
